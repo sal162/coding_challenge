@@ -1,5 +1,7 @@
 ## Samantha Lambert - samantha.carol.lambert@gmail.com - Coding Challenge - 8/2/2018
 
+Used - Python 2.7.10
+
 ## Files Included:
 	* requirements.txt
 	* main.py
