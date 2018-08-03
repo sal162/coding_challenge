@@ -1,0 +1,36 @@
+<!--Samantha Lambert -  samantha.carol.lambert@gmail.com - Coding Challenge - 8/2/2018!-->
+
+{% extends "layout.html" %}
+{% block body %}
+      <form action="" method="post">
+        <input name="goHome" type="submit" value="Go back to homepage">
+      </form> 
+    <title>Viewing Data for {{ filename }}</title>
+    <h1>Total Revenue = ${{ totalRev }}</h1>
+    <h2>Row Count = {{ dataCount }}</h2>
+    <!--table for data-->
+  <table class="table" id="theDataTable">
+      <thead>
+          <tr>
+                <th>Item</th>
+                <th>Item Description</th>
+                <th>Item Price</th>
+                <th>Item Count</th>
+                <th>Vendor</th>
+                <th>Vendor Address</th>
+          </tr>
+      </thead>          
+  {% for row in dataList %}
+  <tr> 
+    <td>{{ row.item }} </td> 
+    <td>{{ row.item_description}} </td>
+    <td>${{ "{0:,.2f}".format(row.item_price) }} </td>
+    <td>{{ row.item_count }} </td>
+    <td>{{ row.vendor }} </td>
+    <td>{{ row.vendor_address }} </td>
+  </tr> 
+  {% else %}
+    <li><em>No data in file.</em>
+  {% endfor %}
+  </table>
+{% endblock %}

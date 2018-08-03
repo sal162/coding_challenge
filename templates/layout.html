@@ -1,0 +1,18 @@
+<!--Samantha Lambert -  samantha.carol.lambert@gmail.com - Coding Challenge - 8/2/2018!-->
+
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="page">
+  {% with flashes = get_flashed_messages() %}
+    {% if flashes %}
+      <ul class="flashes">
+      {% for message in flashes %}
+        <li>{{ message }}
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <div class="body">
+  {% block body %}{% endblock %}
+  </div>
+</div>
